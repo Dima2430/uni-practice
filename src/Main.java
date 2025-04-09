@@ -1,7 +1,9 @@
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.Date;
 public class Main {
     public static void main(String[] args) {
         // Scanner input = new Scanner(System.in);
@@ -32,7 +34,7 @@ public class Main {
         // Education edu1 = new Education(degree, major, school, gradYear);
         // JobExperience job1 = new JobExperience(jobTitle, company, startDate, endDate);
 
-        String name = "Dima";
+        String name = "Sasa";
         int age = 18;
         double height = 6.1;
         String sex = "male";
@@ -46,9 +48,10 @@ public class Main {
 
         Person original = new Person(name, age, height, sex, educationList, jobList);
        
-FileRepository.savePeopleToFile(Arrays.asList(original), "/src/people/Person1.txt");
-        System.out.println("=== Original Person ===");
-        System.out.println(original);
-        // input.close();
+// FileRepository.savePeopleToFile(original,original.getName() + original.getAge() + ".txt");
+
+        List<Person> people = FileRepository.loadPeopleFromFile(original.getName() + original.getAge() + ".txt");
+       
+            System.out.println(people);
     }
 }

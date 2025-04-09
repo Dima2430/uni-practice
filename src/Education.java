@@ -33,4 +33,7 @@ public class Education {
     public String getSchool() {
         return school;
     }
+    public String toFileString() {
+        return school + "-" + degree + "-" + major + "-" + gradYear;
+    }
 }

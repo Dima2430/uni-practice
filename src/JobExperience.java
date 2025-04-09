@@ -18,7 +18,7 @@ public class JobExperience {
         this.endDate = copy.endDate;
     }
     public JobExperience(String line) {
-        String[] parts = line.split("-");
+        String[] parts = line.split("\\|");
         this.company = parts[0];
         this.jobTitle = parts[1];
         this.startDate = parts[2];
@@ -29,7 +29,11 @@ public class JobExperience {
         return "Job Title: " + jobTitle + "\nCompany: " + company + "\nStart Date: " + startDate + "\nEnd Date: "
                 + endDate;
     }
+
     public String getEndDate() {
         return endDate;
+    }
+    public String toFileString() {
+        return company + "|" + jobTitle + "|" + startDate + "|" + endDate;
     }
 }

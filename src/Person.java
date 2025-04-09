@@ -36,8 +36,8 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Name: " + name + "\nAge: " + age + "\nHeight: " + height + "\nSex: " + sex + "\nEducation: " + education
-                + "\nJob Experience: " + jobExperience;
+        return "Name: " + name + "\nAge: " + age + "\nHeight: " + height + "\nSex: " + sex + "\nEducation: " + education.toString()
+                + "\nJob Experience: " + jobExperience.toString();
     }
 
     public void addJobExperience(JobExperience jobExperience) {
@@ -71,4 +71,23 @@ public class Person {
         return false;
     }
 
+    public String getName() {
+        return name;
+    }
+public int getAge() {
+    return age;
+}
+    public String toFileString() {
+        String eduString = "";
+        for (Education e : education) {
+            eduString += e.toFileString() + ",";
+        }
+
+        String jobString = "";
+        for (JobExperience j : jobExperience) {
+            jobString += j.toFileString() + ",";
+        }
+        
+        return name + ";" + age + ";" + height + ";" + sex + ";" + eduString + ";" + jobString;
+    }
 }

@@ -42,11 +42,11 @@ public class FileRepository {
 
     return people;
 }
-public static void savePeopleToFile(List<Person> people, String filename) {
+public static void savePeopleToFile(Person person, String filename) {
     try (java.io.PrintWriter writer = new java.io.PrintWriter(new File(filename))) {
-        for (Person person : people) {
-            writer.println(person.toString());
-        }
+       
+            writer.println(person.toFileString());
+        
     } catch (Exception e) {
         System.err.println("Failed to save people: " + e.getMessage());
         e.printStackTrace();

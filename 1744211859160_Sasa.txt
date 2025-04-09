@@ -1,0 +1,7 @@
+Sasa;18;6.1;male;[Degree: Bachelor of Science
+Major: Computer Science
+School: University of XYZ
+Graduation Year: 2020];[Job Title: Software Engineer
+Company: ABC Corporation
+Start Date: 2022-01-01
+End Date: 2023-01-01]
