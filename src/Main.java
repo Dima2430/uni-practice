@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Iterator;
 public class Main {
     public static void main(String[] args) {
         // Scanner input = new Scanner(System.in);
@@ -52,6 +53,17 @@ public class Main {
 
         List<Person> people = FileRepository.loadPeopleFromFile(original.getName() + original.getAge() + ".txt");
        
-            System.out.println(people);
+        System.out.println(people);
+        int[] data = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+        EvenIterator even = new EvenIterator(data);
+        Iterator<Integer> it = even.iterator();
+        int in = 0;
+        while (in < data.length) {
+            System.out.println("From while: " + it.next());
+            in++;
+        }
+        for (int i : even) {
+            System.out.println("From for: "+ i);
+        }
     }
 }
