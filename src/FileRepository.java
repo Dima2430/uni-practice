@@ -44,9 +44,7 @@ public class FileRepository {
 }
 public static void savePeopleToFile(Person person, String filename) {
     try (java.io.PrintWriter writer = new java.io.PrintWriter(new File(filename))) {
-       
             writer.println(person.toFileString());
-        
     } catch (Exception e) {
         System.err.println("Failed to save people: " + e.getMessage());
         e.printStackTrace();
